@@ -1,8 +1,8 @@
-# Svelte simple router
+# Svelte 3 simple router
 
 Installation
 ```Bash
-npm i -D svelte-router
+npm i -D svelte3-router
 ```
 
 Example use
