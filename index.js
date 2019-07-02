@@ -15,10 +15,10 @@ function go ({ branch, action, id, redirect = false }) {
   href += query.length ? '?' + query.join('&') : ''
   if (!redirect) history.pushState({}, '', href)
   else history.replaceState({}, '', href)
-  parseHash()
+  parse()
 }
 
-function parseHash () {
+function parse () {
   const result = {}
   const path = location.pathname.slice(1)
   const query = location.search.slice(1)
@@ -59,14 +59,14 @@ function search (search) {
   return result
 }
 
-window.addEventListener('popstate', () => parseHash())
+window.addEventListener('popstate', () => parse())
 window.addEventListener('click', e => {
   if (e.target.href) {
     e.preventDefault()
     history.pushState({}, '', e.target.href)
-    parseHash()
+    parse()
   }
 })
-parseHash()
+parse()
 
 export default { go, subscribe }
