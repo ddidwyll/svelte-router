@@ -69,4 +69,4 @@ window.addEventListener('click', e => {
 })
 parseHash()
 
-export default { go: go, subscribe }
+export default { go, subscribe }
