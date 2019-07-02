@@ -64,6 +64,7 @@ window.addEventListener('click', e => {
   if (e.target.href) {
     e.preventDefault()
     history.pushState({}, '', e.target.href)
+    parse()
   }
 })
 parse()
