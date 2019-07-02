@@ -7,7 +7,7 @@ npm i -D svelte-router
 
 Example use
 ```Html
-<pre>{JSON.stringify($router, null, 2)}</pre>
+<pre>$router: {JSON.stringify($router, null, 2)}</pre>
 
 <button on:click={() => router.go({ branch: 'order' })}>
   branch_order
