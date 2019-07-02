@@ -51,8 +51,8 @@ function search (search) {
     .slice(start + 1, end)
     .split(',')
     .forEach(str => {
-      const [prop, value] = str.split(':')
-      if (!!prop && !!value) result[prop.trim()] = value.trim()
+      const [prop, val] = str.split(':')
+      if (prop && val) result[prop.trim()] = val.trim()
     })
   result.search = search.slice(0, start)
   result.search += search.slice(end + 1, search.length)
