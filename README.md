@@ -46,8 +46,11 @@ Example use
 </button>
 
 <a href="/order/view?id=123">order_123</a>
-<a href="/order/index?search=123">orders_search</a>
-<a href="/order/index?search=(a:1, b:2)">orders_search</a>
+<a href="/order/index?query=123">orders_search</a>
+<a href="/order/index?query=(a:1, b:2)">orders_search</a>
+<a href="/order/index?query=(a:1, b:2) right">orders_search</a>
+<a href="/order/index?query=left (a:1, b:2)">orders_search</a>
+<a href="/order/index?query=both (a:1, b:2, c:txt) both">orders_search</a>
 
 <script>
   import router form 'svelte-router'
