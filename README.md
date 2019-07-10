@@ -38,9 +38,10 @@ Example use
 </Button>
 
 <input
-  on:input={e => router.go({ query: e.target.value })}
+  on:input={e => router.go({ query: e.target.value || null })}
   value={$router.query}
   placeholder="query" />
+
 <button on:click={() => router.go({ query: null })}>
   reset_search
 </button>
