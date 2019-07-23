@@ -6,7 +6,7 @@ function go ({ branch, action, id, redirect = false }) {
   const prev = get(store)
   const args = arguments[0]
   const query = []
-  ;['id', 'page', 'query'].forEach(prop => {
+  ;['id', 'page', 'query', 'type', 'prod', 'model', 'cat', 'subcat'].forEach(prop => {
     const val = prop in args ? args[prop] : prev[prop] || null
     if (val !== null) query.push(prop + '=' + val)
   })
@@ -35,6 +35,11 @@ function parse () {
     id: result.id || null,
     query: result.query || '',
     page: result.page ? +result.page || 0 : null,
+    type: result.type || null,
+    prod: result.prod || null,
+    model: result.model || null,
+    cat: result.cat || null,
+    subcat: result.subcat || null,
     branch: path.split('/')[0] || 'main',
     action: path.split('/')[1] || 'index'
   })
